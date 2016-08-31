@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class TestDemo{
+	public static void main(String[] args){
+		System.out.println("请输入菱形边长：");    //输入菱形边长
+		Scanner scan = new Scanner(System.in);
+		int m = scan.nextInt();
+		int n = 2 * m;
+		for ( int x = 1 ; x <= n ; x ++ ){    //执行菱形行数
+			for ( int i = 1 ; i < m ; i ++ ){ //执行每行空格
+				System.out.print( " ");
+			}
+			for ( int j = 0 ; j <= n/2 - m ; j ++ ){ //打印每行的 *
+				System.out.print("*" + " ");
+			}
+			System.out.println();
+			if ( x < n/2)    //菱形取中转折
+				m--;
+			else
+				m++;
+		}scan.close();
+	}
+}
